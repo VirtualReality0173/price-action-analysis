@@ -11,13 +11,14 @@ from src.plots import (
 
 st.set_page_config(page_title="Price Action Dashboard", layout="wide")
 
-# --- Sidebar ---
-st.sidebar.title("Filters")
+# TODO: Add another sidebar for filtering based on sector
 
-# Let user enter ticker manually
-selected_stock_ticker = st.sidebar.text_input("Enter Stock Ticker (e.g., AAPL, INFY.NS):", "AAPL")
+# TODO: Change the below code to show stock names of selected sector only
 
-# --- Main page ---
+st.sidebar.title("Select Stock")
+selected_stock_name = st.sidebar.selectbox("Choose a stock:", STOCK_NAMES)
+selected_stock_ticker = STOCKS[selected_stock_name]
+
 st.title("Price Action Dashboard")
 st.write(f"### Selected Stock: **{selected_stock_ticker}**")
 
